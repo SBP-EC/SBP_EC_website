@@ -16,25 +16,48 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'Partners', href: '#partners' },
 ];
 
+export const BOARD_MEMBERS: BoardMember[] = [
+  {
+    name: 'Erik Hultenius',
+    role: 'Co-founder, President',
+    image: 'imgs/headshots/erik_hultenius.jpg'
+  },
+  {
+    name: 'Anna Chechenina',
+    role: 'Co-founder, External Affairs',
+    image: 'imgs/headshots/anna_chechenina.jpg'
+  },
+  {
+    name: 'Alisha Kirkland',
+    role: 'Co-founder, Internal Affairs',
+    image: 'imgs/headshots/alisha_kirkland.jpg'
+  },
+  {
+    name: 'Chris Larson',
+    role: 'Faculty Advisor',
+    image: 'imgs/headshots/chris_larson.jpg'
+  }
+];
+
 export const NEWS_DATA: NewsItem[] = [
   {
     id: '1',
-    title: 'SBP-EC Welcomes New Board Members for 2024-2025',
-    date: 'Oct 15, 2024',
+    title: 'SBP-EC Welcomes New Board Members for 2025-2026',
+    date: 'Oct 15, 2025',
     excerpt: 'We are thrilled to introduce the visionary researchers leading our club into the new academic year.',
     category: 'Announcement'
   },
   {
     id: '2',
     title: 'Collaborative Workshop with Nucleate Announced',
-    date: 'Oct 10, 2024',
+    date: 'Oct 10, 2025',
     excerpt: 'Join us for an intensive session on translating lab discoveries into viable biotech startups.',
     category: 'Industry'
   },
   {
     id: '3',
     title: 'Member Startup Secures Seed Funding',
-    date: 'Sep 28, 2024',
+    date: 'Sep 28, 2025',
     excerpt: 'A huge congratulations to the team at BioPath for their $2M seed round achievement.',
     category: 'Success Story'
   }
@@ -44,7 +67,7 @@ export const EVENTS_DATA: EventItem[] = [
   {
     id: 'e1',
     title: 'The Art of the Biotech Pitch',
-    date: 'Nov 12, 2024',
+    date: 'Nov 12, 2025',
     time: '4:00 PM - 6:00 PM',
     location: 'Building 1, Auditorium A',
     description: 'Learn how to present your scientific data to venture capitalists.'
@@ -52,7 +75,7 @@ export const EVENTS_DATA: EventItem[] = [
   {
     id: 'e2',
     title: 'Monthly Networking Mixer',
-    date: 'Dec 05, 2024',
+    date: 'Dec 05, 2025',
     time: '5:30 PM - 7:30 PM',
     location: 'SBP Outdoor Terrace',
     description: 'Connect with fellow scientists and local industry professionals.'
@@ -70,17 +93,17 @@ export const EVENTS_DATA: EventItem[] = [
 export const PARTNERS: Partner[] = [
   {
     name: 'Nucleate',
-    logo: 'https://images.squarespace-cdn.com/content/v1/5fd043cc531776595f19022d/1609121657805-7F2G4T5B6L6J7H8K9L0M/Nucleate+Logo+Full+Color.png',
-    url: 'https://nucleate.xyz'
+    logo: 'imgs/nucleate.png',
+    url: 'https://nucleate.org'
   },
   {
     name: 'Sanford Burnham Prebys',
-    logo: 'https://www.sbpdiscovery.org/sites/default/files/SBP_Logo_Horizontal_RGB.png',
+    logo: 'imgs/sbp.jpg',
     url: 'https://sbpdiscovery.org'
   },
   {
-    name: 'BioLabs',
-    logo: 'https://biolabs.io/wp-content/uploads/2021/04/biolabs-logo.png',
-    url: 'https://biolabs.io'
+    name: 'SBP-SN',
+    logo: 'imgs/sbpsn.jpg',
+    url: 'https://www.linkedin.com/in/sanfordburnhamprebyssn/'
   }
 ];

@@ -26,3 +26,9 @@ export interface Partner {
   logo: string;
   url: string;
 }
+
+export interface BoardMember {
+  name: string;
+  role: string;
+  image: string;
+}

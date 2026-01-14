@@ -2,6 +2,7 @@
 import React from 'react';
 import { Navigation } from './components/Navigation';
 import { Section } from './components/Section';
+import { Leadership } from './components/Leadership';
 import { AIAdvisor } from './components/AIAdvisor';
 import { NEWS_DATA, EVENTS_DATA, PARTNERS } from './constants';
 
@@ -19,7 +20,7 @@ const App: React.FC = () => {
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-[#8B0000] uppercase bg-[#8B0000]/5 rounded-full">
-            EST. 2024
+            EST. 2025
           </span>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 mb-8 leading-tight">
             Bridging the Gap Between <br />
@@ -64,6 +65,9 @@ const App: React.FC = () => {
             <img src="https://picsum.photos/seed/sbp-ec/800/600" alt="SBP Researchers" className="w-full h-full object-cover" />
           </div>
         </div>
+
+        {/* Leadership Subsection */}
+        <Leadership />
       </Section>
 
       {/* What We Do */}
@@ -145,7 +149,7 @@ const App: React.FC = () => {
               <img 
                 src={partner.logo} 
                 alt={partner.name} 
-                className="h-12 md:h-16 w-auto object-contain" 
+                className="w-32 md:w-40 h-auto object-contain" 
               />
             </a>
           ))}
@@ -159,7 +163,7 @@ const App: React.FC = () => {
             <span className="text-xl font-bold text-[#8B0000] font-['Playfair_Display']">
               SBP<span className="text-gray-900 font-normal">.EC</span>
             </span>
-            <p className="text-sm text-gray-500 mt-2">© 2024 Sanford Burnham Prebys Entrepreneurship Club.</p>
+            <p className="text-sm text-gray-500 mt-2">© 2025 Sanford Burnham Prebys Entrepreneurship Club.</p>
           </div>
           <div className="flex gap-8">
             <a href="#" className="text-gray-400 hover:text-[#8B0000]">Twitter</a>
