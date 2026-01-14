@@ -19,13 +19,19 @@ Official digital presence for the Sanford Burnham Prebys Entrepreneurship Club.
 
 ### Option 1: GitHub Pages (Recommended for GitHub hosting)
 
-1. **Create a GitHub Repository** and push your code.
-2. **Go to Settings > Pages**.
-3. Under **Build and deployment**, set **Source** to **GitHub Actions**.
-4. Create a file at `.github/workflows/deploy.yml` (GitHub often suggests a "Static HTML" or "Vite" template—choose the Vite one).
-5. **Environment Variable**: To use the AI Advisor, you need a Google Gemini API Key.
-   - Go to **Settings > Secrets and variables > Actions**.
-   - Add a New Repository Secret: `VITE_GEMINI_API_KEY`.
+This repository is configured to deploy automatically via **GitHub Actions**.
+
+1. **Push your code** to the `main` branch.
+2. **Add your API Key**:
+   - Go to your GitHub Repo > **Settings** > **Secrets and variables** > **Actions**.
+   - Create a **New repository secret**.
+   - Name: `VITE_GEMINI_API_KEY`
+   - Value: (Your Google Gemini API Key).
+3. **Enable Pages**:
+   - Go to **Settings** > **Pages**.
+   - Under **Build and deployment** > **Source**, select **GitHub Actions**.
+
+The site will now build and update every time you push code!
 
 ### Option 2: Vercel or Netlify (Easiest)
 
