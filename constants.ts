@@ -1,5 +1,5 @@
 
-import { NavItem, NewsItem, EventItem, Partner } from './types';
+import { NavItem, NewsItem, EventItem, Partner, BoardMember } from './types';
 
 export const COLORS = {
   primary: '#8B0000', // Dark Red
