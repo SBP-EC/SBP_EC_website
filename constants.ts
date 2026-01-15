@@ -25,7 +25,7 @@ export const BOARD_MEMBERS: BoardMember[] = [
   {
     name: 'Anna Chechenina',
     role: 'Co-founder, External Affairs',
-    image: 'imgs/headshots/anna_chechenina.JPG'
+    image: 'imgs/headshots/anna_chechenina.jpg'
   },
   {
     name: 'Alisha Kirkland',
@@ -81,7 +81,7 @@ If anything above is of interest to you, or if there are specific topics you wou
     date: 'Jan 15, 2026',
     excerpt: 'We are looking for a visual identity! Help us design the official SBP-EC logo and leave your mark on the club.',
     category: 'Announcement',
-    url: '#logo-submission-form',
+    url: 'https://forms.cloud.microsoft/r/rfJnUvGFEW',
     ctaText: 'Submit Your Design',
     fullContent: `We are officially opening the floor for logo suggestions! As a newly formed club, we want our visual identity to reflect the intersection of breakthrough science and entrepreneurial spirit at Sanford Burnham Prebys.
 
