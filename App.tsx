@@ -1,12 +1,33 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navigation } from './components/Navigation';
 import { Section } from './components/Section';
 import { Leadership } from './components/Leadership';
 import { AIAdvisor } from './components/AIAdvisor';
 import { NEWS_DATA, EVENTS_DATA, PARTNERS } from './constants';
+import { NewsItem } from './types';
 
 const App: React.FC = () => {
+  const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null);
+
+  // Close modal on escape key
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSelectedNews(null);
+    };
+    window.addEventListener('keydown', handleEsc);
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, []);
+
+  // Prevent scrolling when modal is open
+  useEffect(() => {
+    if (selectedNews) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [selectedNews]);
+
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -62,7 +83,7 @@ const App: React.FC = () => {
             </div>
           </div>
           <div className="rounded-3xl overflow-hidden shadow-2xl">
-            <img src="https://picsum.photos/seed/sbp-ec/800/600" alt="SBP Researchers" className="w-full h-full object-cover" />
+            <img src="imgs/sbp_main.webp" alt="SBP Researchers and Innovators" className="w-full h-full object-cover" />
           </div>
         </div>
 
@@ -100,7 +121,12 @@ const App: React.FC = () => {
               <p className="text-gray-600 text-sm mb-6 flex-grow">{news.excerpt}</p>
               <div className="flex justify-between items-center pt-4 border-t border-gray-50">
                 <span className="text-xs text-gray-400">{news.date}</span>
-                <button className="text-[#8B0000] text-sm font-bold hover:underline">Read More →</button>
+                <button 
+                  onClick={() => news.fullContent ? setSelectedNews(news) : news.url && window.open(news.url, '_blank')}
+                  className="text-[#8B0000] text-sm font-bold hover:underline"
+                >
+                  Read More <span className="sr-only">about {news.title}</span>→
+                </button>
               </div>
             </article>
           ))}
@@ -155,6 +181,66 @@ const App: React.FC = () => {
           ))}
         </div>
       </Section>
+
+
+      {/* News Modal */}
+      {selectedNews && (
+        <div 
+          className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-gray-900/60 backdrop-blur-sm animate-in fade-in duration-200"
+          onClick={() => setSelectedNews(null)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div 
+            className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative animate-in zoom-in-95 duration-200"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="sticky top-0 bg-white/80 backdrop-blur-md px-8 py-6 border-b border-gray-100 flex justify-between items-start">
+              <div>
+                <span className="text-xs font-bold text-[#8B0000] uppercase tracking-wider block mb-1">
+                  {selectedNews.category}
+                </span>
+                <h2 className="text-3xl font-bold text-gray-900">
+                  {selectedNews.title}
+                </h2>
+                <p className="text-sm text-gray-400 mt-1">{selectedNews.date}</p>
+              </div>
+              <button 
+                onClick={() => setSelectedNews(null)}
+                className="p-2 hover:bg-gray-100 rounded-full transition-colors text-gray-400 hover:text-gray-900"
+                aria-label="Close modal"
+              >
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            
+            <div className="p-8">
+              <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed whitespace-pre-line">
+                {selectedNews.fullContent || selectedNews.excerpt}
+              </div>
+
+              {selectedNews.url && (
+                <div className="mt-10 p-6 bg-[#FAFAF5] rounded-2xl border border-[#8B0000]/10 flex flex-col md:flex-row items-center justify-between gap-6">
+                  <div>
+                    <h4 className="font-bold text-gray-900 mb-1">Take Action</h4>
+                    <p className="text-sm text-gray-600">Join our community or share your thoughts.</p>
+                  </div>
+                  <a 
+                    href={selectedNews.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full md:w-auto px-8 py-3 bg-[#8B0000] text-white font-bold rounded-full hover:bg-[#660000] transition-colors text-center shadow-lg shadow-[#8B0000]/20"
+                  >
+                    {selectedNews.ctaText || 'Visit Link'}
+                  </a>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Footer */}
       <footer className="bg-white border-t border-gray-100 py-12 px-4 sm:px-6 lg:px-8">

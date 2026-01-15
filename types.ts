@@ -10,6 +10,9 @@ export interface NewsItem {
   date: string;
   excerpt: string;
   category: 'Announcement' | 'Industry' | 'Success Story';
+  url?: string;
+  fullContent?: string;
+  ctaText?: string;
 }
 
 export interface EventItem {
@@ -19,6 +22,7 @@ export interface EventItem {
   time: string;
   location: string;
   description: string;
+  url?: string;
 }
 
 export interface Partner {
