@@ -43,28 +43,28 @@ const App: React.FC = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <div className="relative overflow-hidden bg-white py-24 sm:py-32 border-b border-[#8B0000]/5">
+      <div className="relative overflow-hidden bg-white py-24 sm:py-32 border-b border-[#5C1620]/5">
         <div className="absolute inset-0 z-0 opacity-5 pointer-events-none overflow-hidden">
-          <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-[#8B0000] blur-3xl"></div>
-          <div className="absolute top-1/2 -right-24 w-64 h-64 rounded-full bg-[#8B0000] blur-3xl"></div>
+          <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-[#5C1620] blur-3xl"></div>
+          <div className="absolute top-1/2 -right-24 w-64 h-64 rounded-full bg-[#5C1620] blur-3xl"></div>
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-[#8B0000] uppercase bg-[#8B0000]/5 rounded-full">
+          <span className="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-[#5C1620] uppercase bg-[#5C1620]/5 rounded-full">
             EST. 2025
           </span>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 mb-8 leading-tight">
             Bridging the Gap Between <br />
-            <span className="text-[#8B0000]">Science</span> & <span className="italic font-serif">Market</span>
+            <span className="text-[#5C1620]">Science</span> & <span className="italic">Market</span>
           </h1>
           <p className="max-w-2xl mx-auto text-xl text-gray-600 mb-10">
             Empowering Sanford Burnham Prebys researchers to transform breakthrough biomedical discoveries into world-changing companies.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#events" className="px-8 py-4 bg-[#8B0000] text-white font-bold rounded-full hover:bg-[#660000] transition-all shadow-xl shadow-[#8B0000]/20">
+            <a href="#events" className="px-8 py-4 bg-[#5C1620] text-white font-bold rounded-full hover:bg-[#4A1018] transition-all shadow-xl shadow-[#5C1620]/20">
               Join Our Next Event
             </a>
-            <a href="#who-we-are" className="px-8 py-4 bg-white text-[#8B0000] border border-[#8B0000]/20 font-bold rounded-full hover:bg-gray-50 transition-all">
+            <a href="#who-we-are" className="px-8 py-4 bg-white text-[#5C1620] border border-[#5C1620]/20 font-bold rounded-full hover:bg-gray-50 transition-all">
               Learn More
             </a>
           </div>
@@ -82,12 +82,12 @@ const App: React.FC = () => {
               Located in the heart of San Diego's biotech hub, we believe that the brilliant science happening at SBP has the potential to solve the world's most pressing medical challenges.
             </p>
             <div className="grid grid-cols-2 gap-6 mt-8">
-              <div className="p-4 border-l-4 border-[#8B0000] bg-white">
-                <h4 className="font-bold text-[#8B0000]">Mission</h4>
+              <div className="p-4 border-l-4 border-[#5C1620] bg-white">
+                <h4 className="font-bold text-[#5C1620]">Mission</h4>
                 <p className="text-sm">Educating scientists on the fundamentals of business and commercialization.</p>
               </div>
-              <div className="p-4 border-l-4 border-[#8B0000] bg-white">
-                <h4 className="font-bold text-[#8B0000]">Vision</h4>
+              <div className="p-4 border-l-4 border-[#5C1620] bg-white">
+                <h4 className="font-bold text-[#5C1620]">Vision</h4>
                 <p className="text-sm">Building a thriving ecosystem where research labs are catalysts for startups.</p>
               </div>
             </div>
@@ -109,9 +109,9 @@ const App: React.FC = () => {
             { title: 'Networking', desc: 'Connecting our members with local VCs, mentors, and biotech executives.', icon: '🤝' },
             { title: 'Mentorship', desc: 'Pairing prospective founders with experienced serial entrepreneurs.', icon: '🏔️' }
           ].map((item, i) => (
-            <div key={i} className="p-8 rounded-2xl bg-[#FAFAF5] border border-transparent hover:border-[#8B0000]/10 hover:shadow-lg transition-all">
+            <div key={i} className="p-8 rounded-2xl bg-[#FAFAF5] border border-transparent hover:border-[#5C1620]/10 hover:shadow-lg transition-all">
               <div className="text-4xl mb-4">{item.icon}</div>
-              <h3 className="text-xl font-bold text-[#8B0000] mb-3">{item.title}</h3>
+              <h3 className="text-xl font-bold text-[#5C1620] mb-3">{item.title}</h3>
               <p className="text-gray-600">{item.desc}</p>
             </div>
           ))}
@@ -129,8 +129,8 @@ const App: React.FC = () => {
         bg="creme"
       >
         <div className="grid md:grid-cols-3 gap-8 text-left">
-          <div className="bg-white rounded-2xl border border-[#8B0000]/10 p-6">
-            <h3 className="text-lg font-bold text-[#8B0000] mb-2">Who to Talk To</h3>
+          <div className="bg-white rounded-2xl border border-[#5C1620]/10 p-6">
+            <h3 className="text-lg font-bold text-[#5C1620] mb-2">Who to Talk To</h3>
             <p className="text-sm text-gray-600">
               This space will highlight key contacts at SBP and in the local ecosystem for discussing your idea,
               getting feedback, and navigating next steps.
@@ -139,8 +139,8 @@ const App: React.FC = () => {
               Coming soon: named contacts for IP, tech transfer, and venture support.
             </p>
           </div>
-          <div className="bg-white rounded-2xl border border-[#8B0000]/10 p-6">
-            <h3 className="text-lg font-bold text-[#8B0000] mb-2">IP, Licensing & Company Formation</h3>
+          <div className="bg-white rounded-2xl border border-[#5C1620]/10 p-6">
+            <h3 className="text-lg font-bold text-[#5C1620] mb-2">IP, Licensing & Company Formation</h3>
             <p className="text-sm text-gray-600">
               We will collect templates, checklists, and guides on filing IP, structuring agreements, equity,
               and early company setup tailored to SBP investigators.
@@ -149,8 +149,8 @@ const App: React.FC = () => {
               Manuals and how‑to guides will be added here.
             </p>
           </div>
-          <div className="bg-white rounded-2xl border border-[#8B0000]/10 p-6">
-            <h3 className="text-lg font-bold text-[#8B0000] mb-2">Programs & External Resources</h3>
+          <div className="bg-white rounded-2xl border border-[#5C1620]/10 p-6">
+            <h3 className="text-lg font-bold text-[#5C1620] mb-2">Programs & External Resources</h3>
             <p className="text-sm text-gray-600">
               A curated list of incubators, accelerators, funding programs, and regional resources relevant to SBP
               researchers who are exploring commercialization.
@@ -173,7 +173,7 @@ const App: React.FC = () => {
             This section will showcase known SBP spin-outs and founder stories, helping current researchers see
             what is possible beyond the lab.
           </p>
-          <div className="rounded-2xl border border-dashed border-[#8B0000]/30 bg-[#FAFAF5] p-6">
+          <div className="rounded-2xl border border-dashed border-[#5C1620]/30 bg-[#FAFAF5] p-6">
             <p className="text-sm text-gray-600">
               We are compiling a list of SBP-founded or SBP-affiliated startups, including company names,
               focus areas, and founding teams.
@@ -191,14 +191,14 @@ const App: React.FC = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {NEWS_DATA.map((news) => (
             <article key={news.id} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex flex-col h-full hover:shadow-md transition-shadow">
-              <div className="text-xs font-bold text-[#8B0000] uppercase tracking-wider mb-2">{news.category}</div>
+              <div className="text-xs font-bold text-[#5C1620] uppercase tracking-wider mb-2">{news.category}</div>
               <h3 className="text-xl font-bold mb-3 line-clamp-2">{news.title}</h3>
               <p className="text-gray-600 text-sm mb-6 flex-grow">{news.excerpt}</p>
               <div className="flex justify-between items-center pt-4 border-t border-gray-50">
                 <span className="text-xs text-gray-400">{news.date}</span>
                 <button 
                   onClick={() => news.fullContent ? setSelectedNews(news) : news.url && window.open(news.url, '_blank')}
-                  className="text-[#8B0000] text-sm font-bold hover:underline"
+                  className="text-[#5C1620] text-sm font-bold hover:underline"
                 >
                   Read More <span className="sr-only">about {news.title}</span>→
                 </button>
@@ -221,7 +221,7 @@ const App: React.FC = () => {
               onClick={() => setEventCarouselIndex((i) => Math.max(0, i - 1))}
               disabled={!canScrollLeft}
               aria-label="Previous event"
-              className="flex-shrink-0 w-12 h-12 rounded-full bg-[#8B0000] text-white flex items-center justify-center shadow-lg disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[#660000] transition-colors"
+              className="flex-shrink-0 w-12 h-12 rounded-full bg-[#5C1620] text-white flex items-center justify-center shadow-lg disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[#4A1018] transition-colors"
             >
               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -244,10 +244,19 @@ const App: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => setSelectedEvent(event)}
-                      className="w-full text-left group relative flex flex-col bg-[#FAFAF5] rounded-3xl overflow-hidden hover:bg-white border border-[#8B0000]/5 hover:border-[#8B0000]/20 transition-all shadow-sm hover:shadow-lg"
+                      className="w-full text-left group relative flex flex-col bg-[#FAFAF5] rounded-3xl overflow-hidden hover:bg-white border border-[#5C1620]/5 hover:border-[#5C1620]/20 transition-all shadow-sm hover:shadow-lg"
                     >
+                      {event.flyerImage && (
+                        <div className="w-full h-24 sm:h-60 flex-shrink-0 overflow-hidden bg-gray-100">
+                          <img
+                            src={event.flyerImage}
+                            alt=""
+                            className="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-300"
+                          />
+                        </div>
+                      )}
                       <div className="flex">
-                        <div className="w-24 sm:w-28 bg-[#8B0000] text-white p-4 flex flex-col justify-center items-center">
+                        <div className="w-24 sm:w-28 bg-[#5C1620] text-white p-4 flex flex-col justify-center items-center flex-shrink-0">
                           <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider opacity-80">
                             {event.date.split(' ')[0]}
                           </span>
@@ -259,7 +268,7 @@ const App: React.FC = () => {
                           </span>
                         </div>
                         <div className="p-4 sm:p-6 flex-grow flex flex-col min-w-0">
-                          <h3 className="text-base sm:text-xl font-semibold text-gray-900 group-hover:text-[#8B0000] transition-colors mb-1 line-clamp-2">
+                          <h3 className="text-base sm:text-xl font-semibold text-gray-900 group-hover:text-[#5C1620] transition-colors mb-1 line-clamp-2">
                             {event.title}
                           </h3>
                           <p className="text-xs sm:text-sm text-gray-600 line-clamp-2 flex-grow">
@@ -273,7 +282,7 @@ const App: React.FC = () => {
                             <span className="truncate">{event.location}</span>
                           </div>
                           {event.url && (
-                            <span className="inline-block mt-2 text-xs font-semibold text-[#8B0000]">
+                            <span className="inline-block mt-2 text-xs font-semibold text-[#5C1620]">
                               RSVP →
                             </span>
                           )}
@@ -289,7 +298,7 @@ const App: React.FC = () => {
               onClick={() => setEventCarouselIndex((i) => Math.min(eventsCount - 1, i + 1))}
               disabled={!canScrollRight}
               aria-label="Next event"
-              className="flex-shrink-0 w-12 h-12 rounded-full bg-[#8B0000] text-white flex items-center justify-center shadow-lg disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[#660000] transition-colors"
+              className="flex-shrink-0 w-12 h-12 rounded-full bg-[#5C1620] text-white flex items-center justify-center shadow-lg disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[#4A1018] transition-colors"
             >
               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -303,7 +312,7 @@ const App: React.FC = () => {
                 type="button"
                 onClick={() => setEventCarouselIndex(i)}
                 aria-label={`Go to event ${i + 1}`}
-                className={`w-2 h-2 rounded-full transition-colors ${i === eventCarouselIndex ? 'bg-[#8B0000] scale-125' : 'bg-[#8B0000]/30'}`}
+                className={`w-2 h-2 rounded-full transition-colors ${i === eventCarouselIndex ? 'bg-[#5C1620] scale-125' : 'bg-[#5C1620]/30'}`}
               />
             ))}
           </div>
@@ -391,7 +400,7 @@ const App: React.FC = () => {
                     href={selectedEvent.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#8B0000] text-white font-semibold shadow-lg shadow-[#8B0000]/20 hover:bg-[#660000] transition-colors"
+                    className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#5C1620] text-white font-semibold shadow-lg shadow-[#5C1620]/20 hover:bg-[#4A1018] transition-colors"
                   >
                     RSVP for this event
                   </a>
@@ -416,7 +425,7 @@ const App: React.FC = () => {
           >
             <div className="sticky top-0 bg-white/80 backdrop-blur-md px-8 py-6 border-b border-gray-100 flex justify-between items-start">
               <div>
-                <span className="text-xs font-bold text-[#8B0000] uppercase tracking-wider block mb-1">
+                <span className="text-xs font-bold text-[#5C1620] uppercase tracking-wider block mb-1">
                   {selectedNews.category}
                 </span>
                 <h2 className="text-3xl font-bold text-gray-900">
@@ -441,7 +450,7 @@ const App: React.FC = () => {
               </div>
 
               {selectedNews.url && (
-                <div className="mt-10 p-6 bg-[#FAFAF5] rounded-2xl border border-[#8B0000]/10 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div className="mt-10 p-6 bg-[#FAFAF5] rounded-2xl border border-[#5C1620]/10 flex flex-col md:flex-row items-center justify-between gap-6">
                   <div>
                     <h4 className="font-bold text-gray-900 mb-1">Take Action</h4>
                     <p className="text-sm text-gray-600">Join our community or share your thoughts.</p>
@@ -450,7 +459,7 @@ const App: React.FC = () => {
                     href={selectedNews.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full md:w-auto px-8 py-3 bg-[#8B0000] text-white font-bold rounded-full hover:bg-[#660000] transition-colors text-center shadow-lg shadow-[#8B0000]/20"
+                    className="w-full md:w-auto px-8 py-3 bg-[#5C1620] text-white font-bold rounded-full hover:bg-[#4A1018] transition-colors text-center shadow-lg shadow-[#5C1620]/20"
                   >
                     {selectedNews.ctaText || 'Visit Link'}
                   </a>
@@ -476,7 +485,7 @@ const App: React.FC = () => {
             href="https://forms.cloud.microsoft/pages/responsepage.aspx?id=IycWC0UA3kewaZ8aeqlVoVPOOpzavk5MpbeSQf96bsVUMTFCNzJJRlFCVjI5N1pDS0hEQTIxQ0RBVi4u&route=shorturl"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-[#8B0000] text-white font-semibold text-sm md:text-base shadow-lg shadow-[#8B0000]/30 hover:bg-[#660000] transition-colors"
+            className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-[#5C1620] text-white font-semibold text-sm md:text-base shadow-lg shadow-[#5C1620]/30 hover:bg-[#4A1018] transition-colors"
           >
             Sign Up for the SBP-EC Mailing List
           </a>
@@ -487,7 +496,7 @@ const App: React.FC = () => {
       <footer className="bg-white border-t border-gray-100 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
           <div>
-            <span className="text-xl font-bold text-[#8B0000] font-['Playfair_Display']">
+            <span className="text-xl font-bold text-[#5C1620]">
               SBP<span className="text-gray-900 font-normal">.EC</span>
             </span>
             <p className="text-sm text-gray-500 mt-2">© 2025 Sanford Burnham Prebys Entrepreneurship Club.</p>
@@ -497,11 +506,11 @@ const App: React.FC = () => {
               href="https://www.linkedin.com/company/sbp-enterpreneurship-club/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-[#8B0000]"
+              className="text-gray-400 hover:text-[#5C1620]"
             >
               LinkedIn
             </a>
-            <a href="mailto:sbpec_exec@sbpdiscovery.org" className="text-gray-400 hover:text-[#8B0000]">Email</a>
+            <a href="mailto:sbpec_exec@sbpdiscovery.org" className="text-gray-400 hover:text-[#5C1620]">Email</a>
           </div>
         </div>
       </footer>

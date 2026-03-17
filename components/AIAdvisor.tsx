@@ -31,14 +31,14 @@ export const AIAdvisor: React.FC = () => {
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl p-8 border border-[#8B0000]/10 max-w-3xl mx-auto mt-12">
+    <div className="bg-white rounded-2xl shadow-xl p-8 border border-[#5C1620]/10 max-w-3xl mx-auto mt-12">
       <div className="flex items-center gap-3 mb-6">
-        <div className="w-10 h-10 bg-[#8B0000] rounded-lg flex items-center justify-center">
+        <div className="w-10 h-10 bg-[#5C1620] rounded-lg flex items-center justify-center">
           <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
           </svg>
         </div>
-        <h3 className="text-2xl font-bold text-[#8B0000]">AI Bio-Innovator Lab</h3>
+        <h3 className="text-2xl font-bold text-[#5C1620]">AI Bio-Innovator Lab</h3>
       </div>
       
       <p className="text-gray-600 mb-6 italic">
@@ -50,12 +50,12 @@ export const AIAdvisor: React.FC = () => {
           value={research}
           onChange={(e) => setResearch(e.target.value)}
           placeholder="e.g., Cancer immunotherapy, Autophagy in neurodegeneration..."
-          className="w-full p-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#8B0000] focus:border-transparent outline-none min-h-[100px] transition-all"
+          className="w-full p-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#5C1620] focus:border-transparent outline-none min-h-[100px] transition-all"
         />
         <button
           onClick={getAdvice}
           disabled={loading || !research.trim()}
-          className="w-full bg-[#8B0000] text-white py-4 rounded-xl font-bold hover:bg-[#660000] disabled:opacity-50 transition-colors shadow-lg shadow-[#8B0000]/20 flex items-center justify-center gap-2"
+          className="w-full bg-[#5C1620] text-white py-4 rounded-xl font-bold hover:bg-[#4A1018] disabled:opacity-50 transition-colors shadow-lg shadow-[#5C1620]/20 flex items-center justify-center gap-2"
         >
           {loading ? (
             <>
@@ -70,7 +70,7 @@ export const AIAdvisor: React.FC = () => {
       </div>
 
       {analysis && (
-        <div className="mt-8 p-6 bg-[#FAFAF5] rounded-xl border border-[#8B0000]/5 animate-in fade-in slide-in-from-bottom-2 duration-500">
+        <div className="mt-8 p-6 bg-[#FAFAF5] rounded-xl border border-[#5C1620]/5 animate-in fade-in slide-in-from-bottom-2 duration-500">
           <div className="prose prose-sm max-w-none text-gray-800 leading-relaxed whitespace-pre-line">
             {analysis}
           </div>

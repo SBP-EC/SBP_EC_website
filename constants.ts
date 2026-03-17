@@ -2,7 +2,8 @@
 import { NavItem, NewsItem, EventItem, Partner, BoardMember } from './types';
 
 export const COLORS = {
-  primary: '#8B0000', // Dark Red
+  primary: '#5C1620',   // Burgundy / bordeaux
+  primaryHover: '#4A1018',
   secondary: '#FAFAF5', // Creme
   text: '#1A1A1A',
   white: '#FFFFFF'
