@@ -6,11 +6,11 @@ export const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-[#FAFAF5]/90 backdrop-blur-md border-b border-[#8B0000]/10">
+    <nav className="sticky top-0 z-50 bg-[#FAFAF5]/90 backdrop-blur-md border-b border-[#5C1620]/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           <div className="flex-shrink-0 flex items-center">
-            <span className="text-2xl font-bold tracking-tighter text-[#8B0000] font-['Playfair_Display']">
+            <span className="text-2xl font-bold tracking-tighter text-[#5C1620]">
               SBP<span className="text-gray-900 font-normal">.EC</span>
             </span>
           </div>
@@ -20,7 +20,7 @@ export const Navigation: React.FC = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-sm font-medium text-gray-700 hover:text-[#8B0000] transition-colors"
+                className="text-sm font-medium text-gray-700 hover:text-[#5C1620] transition-colors"
               >
                 {item.label}
               </a>
@@ -30,7 +30,7 @@ export const Navigation: React.FC = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-md text-[#8B0000] focus:outline-none"
+              className="p-2 rounded-md text-[#5C1620] focus:outline-none"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
@@ -49,7 +49,7 @@ export const Navigation: React.FC = () => {
                 key={item.label}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#8B0000]"
+                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#5C1620]"
               >
                 {item.label}
               </a>

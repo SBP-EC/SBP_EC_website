@@ -22,7 +22,10 @@ export interface EventItem {
   time: string;
   location: string;
   description: string;
+  /** RSVP / registration URL */
   url?: string;
+  /** Event flyer image path, e.g. imgs/events/carter_palmer_flyer.jpg */
+  flyerImage?: string;
 }
 
 export interface Partner {

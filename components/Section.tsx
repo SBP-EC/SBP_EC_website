@@ -17,7 +17,7 @@ export const Section: React.FC<SectionProps> = ({ id, title, subtitle, children,
     >
       <div className="max-w-7xl mx-auto">
         <div className="mb-16 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#8B0000] mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#5C1620] mb-4">
             {title}
           </h2>
           {subtitle && (
@@ -25,7 +25,7 @@ export const Section: React.FC<SectionProps> = ({ id, title, subtitle, children,
               {subtitle}
             </p>
           )}
-          <div className="mt-4 w-12 h-1 bg-[#8B0000] mx-auto opacity-30"></div>
+          <div className="mt-4 w-12 h-1 bg-[#5C1620] mx-auto opacity-30"></div>
         </div>
         {children}
       </div>

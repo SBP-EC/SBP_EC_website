@@ -2,7 +2,8 @@
 import { NavItem, NewsItem, EventItem, Partner, BoardMember } from './types';
 
 export const COLORS = {
-  primary: '#8B0000', // Dark Red
+  primary: '#5C1620',   // Burgundy / bordeaux
+  primaryHover: '#4A1018',
   secondary: '#FAFAF5', // Creme
   text: '#1A1A1A',
   white: '#FFFFFF'
@@ -11,9 +12,12 @@ export const COLORS = {
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Who We Are', href: '#who-we-are' },
   { label: 'What We Do', href: '#what-we-do' },
+  { label: 'Resources', href: '#resources' },
+  { label: 'Spin-outs', href: '#spinouts' },
   { label: 'News', href: '#news' },
   { label: 'Events', href: '#events' },
   { label: 'Partners', href: '#partners' },
+  { label: 'Mailing List', href: '#mailing-list' },
 ];
 
 export const BOARD_MEMBERS: BoardMember[] = [
@@ -94,11 +98,37 @@ Submit your designs or conceptual sketches via the submission link below. We can
 export const EVENTS_DATA: EventItem[] = [
   {
     id: 'e1',
-    title: 'SBP-EC Inaugural Meeting',
-    date: 'Feb 25, 2026',
-    time: '12:00 AM - 1:00 PM',
+    title: 'SBP-EC Trailblazer Series: Third Element Bio',
+    date: 'Apr 1, 2026',
+    time: '12:00 PM - 1:00 PM',
     location: 'Fishman Auditorium, SBP',
-    description: 'Join us for the inaugural meeting of the SBP Entrepreneurial Club (SBP-EC)! Meet fellow members, learn about our mission, and explore upcoming events and initiatives.',
+    description: 'Our inaugural event of the series featuring Carter Palmer, CEO of Third Element Bio, discussing his journey from scientist to biotech founder and the lessons he learned along the way.',
+    url: 'https://forms.cloud.microsoft/r/M2UyAfdFJE',
+    flyerImage: 'imgs/events/01042026_carter_palmer.png',
+  },
+  {
+    id: 'e2',
+    title: 'SBP-EC General Board Meeting',
+    date: 'April ?, 2026',
+    time: '12:00 AM - 1:00 PM',
+    location: 'TBD, SBP',
+    description: 'Join us for our first general board meeting of the year! Meet fellow members, learn about our mission, and explore upcoming events and initiatives. We will discuss the upcoming year\'s events and initiatives that we will be hosting.',
+  },
+  {
+    id: 'e3',
+    title: 'SBP-EC Trailblazer Series: TBD',
+    date: 'June ?, 2026',
+    time: '12:00 PM - 1:00 PM',
+    location: 'Fishman Auditorium, SBP',
+    description: 'Our inaugural event of the series featuring Carter Palmer, CEO of Third Element Bio, discussing his journey from scientist to biotech founder and the lessons he learned along the way.',
+  },
+  {
+    id: 'e4',
+    title: 'SBP-EC General Board Meeting',
+    date: 'June ?, 2026',
+    time: '12:00 AM - 1:00 PM',
+    location: 'TBD, SBP',
+    description: 'General board meeting where we discuss Club matters, introduce future events and initiatives, and discuss any other relevant topics.',
   }
 ];
 
