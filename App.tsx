@@ -5,28 +5,38 @@ import { Section } from './components/Section';
 import { Leadership } from './components/Leadership';
 import { AIAdvisor } from './components/AIAdvisor';
 import { NEWS_DATA, EVENTS_DATA, PARTNERS } from './constants';
-import { NewsItem } from './types';
+import { NewsItem, EventItem } from './types';
 
 const App: React.FC = () => {
   const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null);
+  const [selectedEvent, setSelectedEvent] = useState<EventItem | null>(null);
+  const [eventCarouselIndex, setEventCarouselIndex] = useState(0);
 
-  // Close modal on escape key
+  // Close modals on escape key
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setSelectedNews(null);
+      if (e.key === 'Escape') {
+        setSelectedNews(null);
+        setSelectedEvent(null);
+      }
     };
     window.addEventListener('keydown', handleEsc);
     return () => window.removeEventListener('keydown', handleEsc);
   }, []);
 
-  // Prevent scrolling when modal is open
+  // Prevent scrolling when a modal is open
   useEffect(() => {
-    if (selectedNews) {
+    if (selectedNews || selectedEvent) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
     }
-  }, [selectedNews]);
+  }, [selectedNews, selectedEvent]);
+
+  const eventsCount = EVENTS_DATA.length;
+  const canScrollLeft = eventCarouselIndex > 0;
+  const canScrollRight = eventCarouselIndex < Math.max(0, eventsCount - 1);
+  const carouselTranslate = eventsCount > 0 ? (eventCarouselIndex / eventsCount) * 100 : 0;
 
   return (
     <div className="min-h-screen">
@@ -198,58 +208,103 @@ const App: React.FC = () => {
         </div>
       </Section>
 
-      {/* Calendar & Events */}
+      {/* Calendar & Events — Carousel (earliest left, later events on the right) */}
       <Section
         id="events"
         title="Event Calendar"
         subtitle="Review the upcoming SBP-EC programming and join us for our events!"
       >
-        <div className="max-w-5xl mx-auto space-y-8">
-          <div className="grid gap-6 md:grid-cols-2">
-            {EVENTS_DATA.map((event) => (
+        <div className="max-w-5xl mx-auto">
+          <div className="relative flex items-center gap-4">
+            <button
+              type="button"
+              onClick={() => setEventCarouselIndex((i) => Math.max(0, i - 1))}
+              disabled={!canScrollLeft}
+              aria-label="Previous event"
+              className="flex-shrink-0 w-12 h-12 rounded-full bg-[#8B0000] text-white flex items-center justify-center shadow-lg disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[#660000] transition-colors"
+            >
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <div className="flex-1 overflow-hidden min-w-0">
               <div
-                key={event.id}
-                className="group relative flex bg-[#FAFAF5] rounded-3xl overflow-hidden hover:bg-white border border-[#8B0000]/5 transition-all"
+                className="flex transition-transform duration-300 ease-out"
+                style={{
+                  width: `${eventsCount * 100}%`,
+                  transform: `translateX(-${carouselTranslate}%)`,
+                }}
               >
-                <div className="w-28 md:w-32 bg-[#8B0000] text-white p-5 flex flex-col justify-center items-center">
-                  <span className="text-xs font-semibold uppercase tracking-[0.2em] opacity-80">
-                    {event.date.split(' ')[0]}
-                  </span>
-                  <span className="text-3xl md:text-4xl font-bold leading-none mt-1">
-                    {event.date.split(' ')[1].replace(',', '')}
-                  </span>
-                  <span className="text-xs mt-2 opacity-80">
-                    {event.time}
-                  </span>
-                </div>
-                <div className="p-6 md:p-8 flex-grow flex flex-col">
-                  <h3 className="text-lg md:text-2xl font-semibold text-gray-900 group-hover:text-[#8B0000] transition-colors mb-2">
-                    {event.title}
-                  </h3>
-                  <p className="text-sm text-gray-600 mb-4 flex-grow">
-                    {event.description}
-                  </p>
-                  <div className="flex items-center justify-between gap-3 text-xs md:text-sm text-gray-500 font-medium">
-                    <div className="flex items-center gap-2">
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                        />
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                        />
-                      </svg>
-                      <span>{event.location}</span>
-                    </div>
+                {EVENTS_DATA.map((event) => (
+                  <div
+                    key={event.id}
+                    className="flex-shrink-0 px-1"
+                    style={{ width: `${100 / eventsCount}%` }}
+                  >
+                    <button
+                      type="button"
+                      onClick={() => setSelectedEvent(event)}
+                      className="w-full text-left group relative flex flex-col bg-[#FAFAF5] rounded-3xl overflow-hidden hover:bg-white border border-[#8B0000]/5 hover:border-[#8B0000]/20 transition-all shadow-sm hover:shadow-lg"
+                    >
+                      <div className="flex">
+                        <div className="w-24 sm:w-28 bg-[#8B0000] text-white p-4 flex flex-col justify-center items-center">
+                          <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider opacity-80">
+                            {event.date.split(' ')[0]}
+                          </span>
+                          <span className="text-2xl sm:text-3xl font-bold leading-none mt-1">
+                            {event.date.split(' ')[1]?.replace(',', '') ?? event.date}
+                          </span>
+                          <span className="text-[10px] sm:text-xs mt-2 opacity-80 hidden sm:block">
+                            {event.time}
+                          </span>
+                        </div>
+                        <div className="p-4 sm:p-6 flex-grow flex flex-col min-w-0">
+                          <h3 className="text-base sm:text-xl font-semibold text-gray-900 group-hover:text-[#8B0000] transition-colors mb-1 line-clamp-2">
+                            {event.title}
+                          </h3>
+                          <p className="text-xs sm:text-sm text-gray-600 line-clamp-2 flex-grow">
+                            {event.description}
+                          </p>
+                          <div className="flex items-center gap-2 text-xs text-gray-500 font-medium mt-2">
+                            <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <span className="truncate">{event.location}</span>
+                          </div>
+                          {event.url && (
+                            <span className="inline-block mt-2 text-xs font-semibold text-[#8B0000]">
+                              RSVP →
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    </button>
                   </div>
-                </div>
+                ))}
               </div>
+            </div>
+            <button
+              type="button"
+              onClick={() => setEventCarouselIndex((i) => Math.min(eventsCount - 1, i + 1))}
+              disabled={!canScrollRight}
+              aria-label="Next event"
+              className="flex-shrink-0 w-12 h-12 rounded-full bg-[#8B0000] text-white flex items-center justify-center shadow-lg disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[#660000] transition-colors"
+            >
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+          <div className="flex justify-center gap-1.5 mt-4">
+            {EVENTS_DATA.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setEventCarouselIndex(i)}
+                aria-label={`Go to event ${i + 1}`}
+                className={`w-2 h-2 rounded-full transition-colors ${i === eventCarouselIndex ? 'bg-[#8B0000] scale-125' : 'bg-[#8B0000]/30'}`}
+              />
             ))}
           </div>
         </div>
@@ -276,6 +331,76 @@ const App: React.FC = () => {
         </div>
       </Section>
 
+
+      {/* Event Detail Modal */}
+      {selectedEvent && (
+        <div
+          className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-gray-900/60 backdrop-blur-sm"
+          onClick={() => setSelectedEvent(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="event-modal-title"
+        >
+          <div
+            className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="sticky top-0 bg-white/95 backdrop-blur-md px-6 sm:px-8 py-6 border-b border-gray-100 flex justify-between items-start z-10">
+              <div>
+                <h2 id="event-modal-title" className="text-2xl sm:text-3xl font-bold text-gray-900 pr-8">
+                  {selectedEvent.title}
+                </h2>
+                <p className="text-sm text-gray-500 mt-1">
+                  {selectedEvent.date} · {selectedEvent.time}
+                </p>
+                <p className="text-sm text-gray-600 mt-1 flex items-center gap-2">
+                  <svg className="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  {selectedEvent.location}
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setSelectedEvent(null)}
+                className="p-2 hover:bg-gray-100 rounded-full transition-colors text-gray-400 hover:text-gray-900 absolute top-6 right-6"
+                aria-label="Close"
+              >
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div className="p-6 sm:px-8 pb-8">
+              {selectedEvent.flyerImage && (
+                <div className="rounded-2xl overflow-hidden border border-gray-100 mb-6">
+                  <img
+                    src={selectedEvent.flyerImage}
+                    alt={`${selectedEvent.title} flyer`}
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+              )}
+              <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+                {selectedEvent.description}
+              </p>
+              {selectedEvent.url && (
+                <div className="mt-8">
+                  <a
+                    href={selectedEvent.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#8B0000] text-white font-semibold shadow-lg shadow-[#8B0000]/20 hover:bg-[#660000] transition-colors"
+                  >
+                    RSVP for this event
+                  </a>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* News Modal */}
       {selectedNews && (
