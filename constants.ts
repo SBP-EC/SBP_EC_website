@@ -11,9 +11,12 @@ export const COLORS = {
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Who We Are', href: '#who-we-are' },
   { label: 'What We Do', href: '#what-we-do' },
+  { label: 'Resources', href: '#resources' },
+  { label: 'Spin-outs', href: '#spinouts' },
   { label: 'News', href: '#news' },
   { label: 'Events', href: '#events' },
   { label: 'Partners', href: '#partners' },
+  { label: 'Mailing List', href: '#mailing-list' },
 ];
 
 export const BOARD_MEMBERS: BoardMember[] = [
@@ -99,6 +102,14 @@ export const EVENTS_DATA: EventItem[] = [
     time: '12:00 AM - 1:00 PM',
     location: 'Fishman Auditorium, SBP',
     description: 'Join us for the inaugural meeting of the SBP Entrepreneurial Club (SBP-EC)! Meet fellow members, learn about our mission, and explore upcoming events and initiatives.',
+  },
+  {
+    id: 'e2',
+    title: 'From Bench to Biotech: Fireside Chat with Carter Palmer',
+    date: 'Apr 1, 2026',
+    time: '12:00 PM - 1:00 PM',
+    location: 'Fishman Auditorium, SBP',
+    description: 'A special SBP-EC event featuring Carter Palmer, CEO of Third Element Bio, discussing his journey from scientist to biotech founder and practical lessons for aspiring entrepreneurs.',
   }
 ];
 

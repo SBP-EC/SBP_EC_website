@@ -111,6 +111,71 @@ const App: React.FC = () => {
         <AIAdvisor />
       </Section>
 
+      {/* SBP Entrepreneurship Resources */}
+      <Section
+        id="resources"
+        title="Entrepreneurship Resources at SBP"
+        subtitle="Practical guidance, people, and processes to support your journey from idea to startup."
+        bg="creme"
+      >
+        <div className="grid md:grid-cols-3 gap-8 text-left">
+          <div className="bg-white rounded-2xl border border-[#8B0000]/10 p-6">
+            <h3 className="text-lg font-bold text-[#8B0000] mb-2">Who to Talk To</h3>
+            <p className="text-sm text-gray-600">
+              This space will highlight key contacts at SBP and in the local ecosystem for discussing your idea,
+              getting feedback, and navigating next steps.
+            </p>
+            <p className="text-xs text-gray-400 mt-4 italic">
+              Coming soon: named contacts for IP, tech transfer, and venture support.
+            </p>
+          </div>
+          <div className="bg-white rounded-2xl border border-[#8B0000]/10 p-6">
+            <h3 className="text-lg font-bold text-[#8B0000] mb-2">IP, Licensing & Company Formation</h3>
+            <p className="text-sm text-gray-600">
+              We will collect templates, checklists, and guides on filing IP, structuring agreements, equity,
+              and early company setup tailored to SBP investigators.
+            </p>
+            <p className="text-xs text-gray-400 mt-4 italic">
+              Manuals and how‑to guides will be added here.
+            </p>
+          </div>
+          <div className="bg-white rounded-2xl border border-[#8B0000]/10 p-6">
+            <h3 className="text-lg font-bold text-[#8B0000] mb-2">Programs & External Resources</h3>
+            <p className="text-sm text-gray-600">
+              A curated list of incubators, accelerators, funding programs, and regional resources relevant to SBP
+              researchers who are exploring commercialization.
+            </p>
+            <p className="text-xs text-gray-400 mt-4 italic">
+              Links and program descriptions will appear here as we build them out.
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      {/* SBP Spin-outs */}
+      <Section
+        id="spinouts"
+        title="SBP Spin-outs"
+        subtitle="Highlighting companies that trace their roots back to Sanford Burnham Prebys."
+      >
+        <div className="max-w-4xl mx-auto space-y-4 text-left">
+          <p className="text-gray-700">
+            This section will showcase known SBP spin-outs and founder stories, helping current researchers see
+            what is possible beyond the lab.
+          </p>
+          <div className="rounded-2xl border border-dashed border-[#8B0000]/30 bg-[#FAFAF5] p-6">
+            <p className="text-sm text-gray-600">
+              We are compiling a list of SBP-founded or SBP-affiliated startups, including company names,
+              focus areas, and founding teams.
+            </p>
+            <p className="text-xs text-gray-400 mt-3 italic">
+              You&apos;ll soon find a gallery of SBP spin-outs here. If you know of one that should be featured,
+              please reach out to the SBP-EC board.
+            </p>
+          </div>
+        </div>
+      </Section>
+
       {/* News & Announcements */}
       <Section id="news" title="News & Announcements" bg="creme">
         <div className="grid md:grid-cols-3 gap-8">
@@ -134,30 +199,59 @@ const App: React.FC = () => {
       </Section>
 
       {/* Calendar & Events */}
-      <Section id="events" title="Upcoming Events">
-        <div className="max-w-4xl mx-auto space-y-6">
-          {EVENTS_DATA.map((event) => (
-            <div key={event.id} className="group relative flex flex-col md:flex-row bg-[#FAFAF5] rounded-3xl overflow-hidden hover:bg-white border border-[#8B0000]/5 transition-all">
-              <div className="md:w-48 bg-[#8B0000] text-white p-8 flex flex-col justify-center items-center">
-                <span className="text-sm font-bold uppercase tracking-widest opacity-80">{event.date.split(' ')[0]}</span>
-                <span className="text-4xl font-bold">{event.date.split(' ')[1].replace(',', '')}</span>
-              </div>
-              <div className="p-8 flex-grow">
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
-                  <h3 className="text-2xl font-bold text-gray-900 group-hover:text-[#8B0000] transition-colors">{event.title}</h3>
-                  <span className="inline-block px-3 py-1 bg-[#8B0000]/10 text-[#8B0000] text-xs font-bold rounded-full">{event.time}</span>
+      <Section
+        id="events"
+        title="Event Calendar"
+        subtitle="A concise, at-a-glance view of upcoming SBP-EC programming. Add new events by updating the events list in the site content."
+      >
+        <div className="max-w-5xl mx-auto space-y-8">
+          <div className="grid gap-6 md:grid-cols-2">
+            {EVENTS_DATA.map((event) => (
+              <div
+                key={event.id}
+                className="group relative flex bg-[#FAFAF5] rounded-3xl overflow-hidden hover:bg-white border border-[#8B0000]/5 transition-all"
+              >
+                <div className="w-28 md:w-32 bg-[#8B0000] text-white p-5 flex flex-col justify-center items-center">
+                  <span className="text-xs font-semibold uppercase tracking-[0.2em] opacity-80">
+                    {event.date.split(' ')[0]}
+                  </span>
+                  <span className="text-3xl md:text-4xl font-bold leading-none mt-1">
+                    {event.date.split(' ')[1].replace(',', '')}
+                  </span>
+                  <span className="text-xs mt-2 opacity-80">
+                    {event.time}
+                  </span>
                 </div>
-                <p className="text-gray-600 mb-4">{event.description}</p>
-                <div className="flex items-center gap-2 text-sm text-gray-500 font-medium">
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  {event.location}
+                <div className="p-6 md:p-8 flex-grow flex flex-col">
+                  <h3 className="text-lg md:text-2xl font-semibold text-gray-900 group-hover:text-[#8B0000] transition-colors mb-2">
+                    {event.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 mb-4 flex-grow">
+                    {event.description}
+                  </p>
+                  <div className="flex items-center justify-between gap-3 text-xs md:text-sm text-gray-500 font-medium">
+                    <div className="flex items-center gap-2">
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                      </svg>
+                      <span>{event.location}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </Section>
 
@@ -242,6 +336,28 @@ const App: React.FC = () => {
         </div>
       )}
 
+      {/* Mailing List */}
+      <Section
+        id="mailing-list"
+        title="Stay in the Loop"
+        subtitle="Sign up to receive SBP-EC event invitations, opportunities, and entrepreneurship resources."
+      >
+        <div className="max-w-2xl mx-auto text-center space-y-6">
+          <p className="text-gray-700">
+            Join our mailing list to hear about new workshops, visiting speakers, and resources as soon as they are
+            announced.
+          </p>
+          <a
+            href="https://forms.cloud.microsoft/pages/responsepage.aspx?id=IycWC0UA3kewaZ8aeqlVoVPOOpzavk5MpbeSQf96bsVUMTFCNzJJRlFCVjI5N1pDS0hEQTIxQ0RBVi4u&route=shorturl"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-[#8B0000] text-white font-semibold text-sm md:text-base shadow-lg shadow-[#8B0000]/30 hover:bg-[#660000] transition-colors"
+          >
+            Sign Up for the SBP-EC Mailing List
+          </a>
+        </div>
+      </Section>
+
       {/* Footer */}
       <footer className="bg-white border-t border-gray-100 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
@@ -253,8 +369,15 @@ const App: React.FC = () => {
           </div>
           <div className="flex gap-8">
             <a href="#" className="text-gray-400 hover:text-[#8B0000]">Twitter</a>
-            <a href="#" className="text-gray-400 hover:text-[#8B0000]">LinkedIn</a>
-            <a href="#" className="text-gray-400 hover:text-[#8B0000]">Email</a>
+            <a
+              href="https://www.linkedin.com/company/sbp-enterpreneurship-club/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-[#8B0000]"
+            >
+              LinkedIn
+            </a>
+            <a href="mailto:sbp-ec-board@sbpdiscovery.org" className="text-gray-400 hover:text-[#8B0000]">Email</a>
           </div>
         </div>
       </footer>
