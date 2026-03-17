@@ -202,7 +202,7 @@ const App: React.FC = () => {
       <Section
         id="events"
         title="Event Calendar"
-        subtitle="A concise, at-a-glance view of upcoming SBP-EC programming. Add new events by updating the events list in the site content."
+        subtitle="Review the upcoming SBP-EC programming and join us for our events!"
       >
         <div className="max-w-5xl mx-auto space-y-8">
           <div className="grid gap-6 md:grid-cols-2">
@@ -368,7 +368,6 @@ const App: React.FC = () => {
             <p className="text-sm text-gray-500 mt-2">© 2025 Sanford Burnham Prebys Entrepreneurship Club.</p>
           </div>
           <div className="flex gap-8">
-            <a href="#" className="text-gray-400 hover:text-[#8B0000]">Twitter</a>
             <a
               href="https://www.linkedin.com/company/sbp-enterpreneurship-club/"
               target="_blank"
@@ -377,7 +376,7 @@ const App: React.FC = () => {
             >
               LinkedIn
             </a>
-            <a href="mailto:sbp-ec-board@sbpdiscovery.org" className="text-gray-400 hover:text-[#8B0000]">Email</a>
+            <a href="mailto:sbpec_exec@sbpdiscovery.org" className="text-gray-400 hover:text-[#8B0000]">Email</a>
           </div>
         </div>
       </footer>

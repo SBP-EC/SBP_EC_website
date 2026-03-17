@@ -97,19 +97,35 @@ Submit your designs or conceptual sketches via the submission link below. We can
 export const EVENTS_DATA: EventItem[] = [
   {
     id: 'e1',
-    title: 'SBP-EC Inaugural Meeting',
-    date: 'Feb 25, 2026',
-    time: '12:00 AM - 1:00 PM',
-    location: 'Fishman Auditorium, SBP',
-    description: 'Join us for the inaugural meeting of the SBP Entrepreneurial Club (SBP-EC)! Meet fellow members, learn about our mission, and explore upcoming events and initiatives.',
-  },
-  {
-    id: 'e2',
-    title: 'From Bench to Biotech: Fireside Chat with Carter Palmer',
+    title: 'SBP-EC Trailblazer Series: Third Element Bio',
     date: 'Apr 1, 2026',
     time: '12:00 PM - 1:00 PM',
     location: 'Fishman Auditorium, SBP',
-    description: 'A special SBP-EC event featuring Carter Palmer, CEO of Third Element Bio, discussing his journey from scientist to biotech founder and practical lessons for aspiring entrepreneurs.',
+    description: 'Our inaugural event of the series featuring Carter Palmer, CEO of Third Element Bio, discussing his journey from scientist to biotech founder and the lessons he learned along the way.',
+  },
+  {
+    id: 'e2',
+    title: 'SBP-EC General Board Meeting',
+    date: 'Mid-April, 2026',
+    time: '12:00 AM - 1:00 PM',
+    location: 'TBD, SBP',
+    description: 'Join us for our first general board meeting of the year! Meet fellow members, learn about our mission, and explore upcoming events and initiatives. We will discuss the upcoming year\'s events and initiatives that we will be hosting.',
+  },
+  {
+    id: 'e3',
+    title: 'SBP-EC Trailblazer Series: TBD',
+    date: 'June, 2026',
+    time: '12:00 PM - 1:00 PM',
+    location: 'Fishman Auditorium, SBP',
+    description: 'Our inaugural event of the series featuring Carter Palmer, CEO of Third Element Bio, discussing his journey from scientist to biotech founder and the lessons he learned along the way.',
+  },
+  {
+    id: 'e4',
+    title: 'SBP-EC General Board Meeting',
+    date: 'June, 2026',
+    time: '12:00 AM - 1:00 PM',
+    location: 'TBD, SBP',
+    description: 'General board meeting where we discuss Club matters, introduce future events and initiatives, and discuss any other relevant topics.',
   }
 ];
 
