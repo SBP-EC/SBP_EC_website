@@ -109,7 +109,7 @@ export const EVENTS_DATA: EventItem[] = [
   {
     id: 'e2',
     title: 'SBP-EC General Board Meeting',
-    date: 'April ?, 2026',
+    date: 'April TBD, 2026',
     time: '12:00 AM - 1:00 PM',
     location: 'TBD, SBP',
     description: 'Join us for our first general board meeting of the year! Meet fellow members, learn about our mission, and explore upcoming events and initiatives. We will discuss the upcoming year\'s events and initiatives that we will be hosting.',
@@ -117,7 +117,7 @@ export const EVENTS_DATA: EventItem[] = [
   {
     id: 'e3',
     title: 'SBP-EC Trailblazer Series: TBD',
-    date: 'June ?, 2026',
+    date: 'June TBD, 2026',
     time: '12:00 PM - 1:00 PM',
     location: 'Fishman Auditorium, SBP',
     description: 'Our inaugural event of the series featuring Carter Palmer, CEO of Third Element Bio, discussing his journey from scientist to biotech founder and the lessons he learned along the way.',
@@ -125,7 +125,7 @@ export const EVENTS_DATA: EventItem[] = [
   {
     id: 'e4',
     title: 'SBP-EC General Board Meeting',
-    date: 'June ?, 2026',
+    date: 'June TBD, 2026',
     time: '12:00 AM - 1:00 PM',
     location: 'TBD, SBP',
     description: 'General board meeting where we discuss Club matters, introduce future events and initiatives, and discuss any other relevant topics.',

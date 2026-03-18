@@ -55,7 +55,7 @@ const App: React.FC = () => {
           </span>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 mb-8 leading-tight">
             Bridging the Gap Between <br />
-            <span className="text-[#5C1620]">Science</span> & <span className="italic">Market</span>
+            <span className="text-[#5C1620]">Science</span> & <span className="italic">Business</span>
           </h1>
           <p className="max-w-2xl mx-auto text-xl text-gray-600 mb-10">
             Empowering Sanford Burnham Prebys researchers to transform breakthrough biomedical discoveries into world-changing companies.
@@ -168,21 +168,12 @@ const App: React.FC = () => {
         title="SBP Spin-outs"
         subtitle="Highlighting companies that trace their roots back to Sanford Burnham Prebys."
       >
-        <div className="max-w-4xl mx-auto space-y-4 text-left">
-          <p className="text-gray-700">
-            This section will showcase known SBP spin-outs and founder stories, helping current researchers see
-            what is possible beyond the lab.
+        <div className="max-w-2xl mx-auto rounded-2xl border border-dashed border-[#5C1620]/30 bg-[#FAFAF5] p-6 mt-2">
+          <p className="text-base text-gray-600 italic">
+            We are compiling a list of SBP-founded or SBP-affiliated startups, including company names,
+            focus areas, and founding teams. If you know of one that should be featured,
+            please reach out to the SBP-EC board.
           </p>
-          <div className="rounded-2xl border border-dashed border-[#5C1620]/30 bg-[#FAFAF5] p-6">
-            <p className="text-sm text-gray-600">
-              We are compiling a list of SBP-founded or SBP-affiliated startups, including company names,
-              focus areas, and founding teams.
-            </p>
-            <p className="text-xs text-gray-400 mt-3 italic">
-              You&apos;ll soon find a gallery of SBP spin-outs here. If you know of one that should be featured,
-              please reach out to the SBP-EC board.
-            </p>
-          </div>
         </div>
       </Section>
 
@@ -508,9 +499,40 @@ const App: React.FC = () => {
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-[#5C1620]"
             >
-              LinkedIn
+              <span className="inline-flex items-center gap-2">
+                <svg
+                  className="w-5 h-5"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.852 0-2.136 1.445-2.136 2.939v5.667H9.351V9.005h3.414v1.561h.046c.476-.9 1.637-1.85 3.368-1.85 3.6 0 4.263 2.369 4.263 5.455v6.281zM5.337 7.433c-1.084 0-1.959-.87-1.959-1.938 0-1.077.875-1.947 1.959-1.947 1.09 0 1.965.87 1.965 1.947 0 1.068-.875 1.938-1.965 1.938zM6.915 20.452H3.759V9.005h3.156v11.447z" />
+                </svg>
+                LinkedIn
+              </span>
             </a>
-            <a href="mailto:sbpec_exec@sbpdiscovery.org" className="text-gray-400 hover:text-[#5C1620]">Email</a>
+            <a
+              href="mailto:sbpec_exec@sbpdiscovery.org"
+              className="text-gray-400 hover:text-[#5C1620]"
+            >
+              <span className="inline-flex items-center gap-2">
+                <svg
+                  className="w-5 h-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M4 4h16v16H4z" opacity="0" />
+                  <path d="M4 7l8 6 8-6" />
+                  <path d="M4 7h16v12H4z" />
+                </svg>
+                Email
+              </span>
+            </a>
           </div>
         </div>
       </footer>
