@@ -1,6 +1,8 @@
 
 # SBP-EC Website
 
+Website link: https://sbp-ec.github.io/SBP_EC_website/
+
 Official digital presence for the Sanford Burnham Prebys Entrepreneurship Club.
 
 ## 🚀 Quick Start (Local)
